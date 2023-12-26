@@ -16,7 +16,7 @@
   display: flex;;
   justify-content: space-around;
   color:white;
-  background-color: blue;
+  background-color: rgb(103, 103, 232);
   font-size: 24px;
   font-weight: 500;
   
@@ -24,7 +24,7 @@
 .totalItem{
   padding:2px 8px;
   border-radius: 50%;
-  background-color: aquamarine;
+  background-color: rgb(164, 164, 238);
 }
 .card{
   display: flex;
@@ -48,6 +48,19 @@ object-fit: cover;
 }
 .card-info{
   flex-grow: 2;
+}
+.totalPrice{
+   padding:10px;
+   background-color: rgb(103, 103, 232);
+   color:white;
+}
+.cart-item-container{
+  position: relative;
+}
+.totalItem{
+  position: relative;
+  bottom:10px;
+  font-size: 14px;
 }
 
 

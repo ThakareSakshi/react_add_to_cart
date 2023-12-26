@@ -8,15 +8,22 @@ const Card = (props) => {
   const onIncrease=()=>{
     let num=count+1
     setCount(num);
+    props.handleTotalItem(1,props.price);
 
   }
   const onDecrease=(e)=>{
     let num=count-1;
+    props.handleTotalItem(-1,-props.price);
     setCount(num);
     if(num<=0){
-      e.target.parentNode.parentNode.parentNode.remove();
- console.log(e.target.parentNode.parentNode);
+      
+deleteCard(e);
     }
+  }
+
+
+  const deleteCard=(e)=>{
+    e.target.parentNode.parentNode.parentNode.remove();
   }
   return (
     <div className='card'>
@@ -26,16 +33,16 @@ const Card = (props) => {
         </div>
         <div className='card-info'>
             <h2>{props.title}</h2>
-            <p className='price'>{props.price}</p>
-            <p className='remove'>remove</p>
+            <p className='price'>${props.price}</p>
+            <div><p className='remove' onClick={deleteCard}>remove</p></div>
         </div>
         <div>
         <div>
-        <i class="fa-solid fa-chevron-up" onClick={onIncrease}></i>
+        <i className="fa-solid fa-chevron-up" onClick={onIncrease}></i>
         </div>
         <div>{count}
         </div>
-        <div><i class="fa-solid fa-chevron-down" onClick={onDecrease}></i></div>
+        <div><i className="fa-solid fa-chevron-down" onClick={onDecrease}></i></div>
         </div>
       
     </div>
