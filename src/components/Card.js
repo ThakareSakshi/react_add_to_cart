@@ -1,6 +1,23 @@
 import React from 'react'
+import {useState} from 'react'
 
 const Card = (props) => {
+
+  const [count,setCount]=useState(1);
+
+  const onIncrease=()=>{
+    let num=count+1
+    setCount(num);
+
+  }
+  const onDecrease=(e)=>{
+    let num=count-1;
+    setCount(num);
+    if(num<=0){
+      e.target.parentNode.parentNode.parentNode.remove();
+ console.log(e.target.parentNode.parentNode);
+    }
+  }
   return (
     <div className='card'>
         <div className='card-image'>
@@ -14,10 +31,11 @@ const Card = (props) => {
         </div>
         <div>
         <div>
-        <i class="fa-solid fa-chevron-up"></i>
+        <i class="fa-solid fa-chevron-up" onClick={onIncrease}></i>
         </div>
-        <div>1</div>
-        <div><i class="fa-solid fa-chevron-down"></i></div>
+        <div>{count}
+        </div>
+        <div><i class="fa-solid fa-chevron-down" onClick={onDecrease}></i></div>
         </div>
       
     </div>
