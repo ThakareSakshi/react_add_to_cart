@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Card = () => {
+const Card = (props) => {
   return (
     <div className='card'>
         <div className='card-image'>
-            <img src="https://www.course-api.com/images/cart/phone-1.png" alt="" />
+            <img src={props.src} alt="" />
 
         </div>
         <div className='card-info'>
-            <h2>samsung galaxy</h2>
-            <p className='price'>$233.12</p>
+            <h2>{props.title}</h2>
+            <p className='price'>{props.price}</p>
             <p className='remove'>remove</p>
         </div>
         <div>
